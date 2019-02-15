@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+      
   <nomatch>
     I didn't understand.
     <reprompt/>
@@ -14,6 +15,8 @@
   <!-- Data model -->
   <var name="from" />
   <var name="to" />
+  <var name="leaveDate">
+  <var name="returnDate">
 
   <!-- State machine -->
   <form id="welcome">
@@ -51,7 +54,78 @@
       <option>new york</option>
     </field>
     <filled>
+      <if cond=="from == 'to' ">
+        <prompt bargein=false>
+          Your destination must be different from the city of departure. Please name a city that is not <value expr="from">
+        </prompt>
+        <clear namelist="to">
+        <goto next="#toField">
+      </if>
       <goto next="#askDate" />
     </filled>
   </form>
+
+  <formid="grounding">
+    <prompt>
+      Do you want to go from <value expr="from"> to <value expr="to"> on <value expr="leaveDate">?
+    </prompt>
+    <filled>
+      <goto next="#confirmBooking">
+    </filled>
+  </form>
+
+
+  <formid="askDate">
+    <field name="leaveDate">
+      <prompt>
+        What date do you want to leave?
+      </prompt>
+    <option>Monday</option>
+    <option>Tuesday</option>
+    <option>Wednesday</option>
+    <option>Thursday</option>
+    <option>Friday</option>
+    <option>Saturday</option>
+    <option>Sunday</option>
+    </field>
+    <filled>
+      <assign name="leaveDate" expr="leaveDate" />
+      <goto next="oneWay">
+    </filled>
+  </form>
+
+  <formid="askDate">
+    <field name="returnDate">
+      <prompt>
+        What date do you want to return?
+      </prompt>
+    <option>Monday</option>
+    <option>Tuesday</option>
+    <option>Wednesday</option>
+    <option>Thursday</option>
+    <option>Friday</option>
+    <option>Saturday</option>
+    <option>Sunday</option>
+    </field>
+    <filled>
+      <assign name="returnDate" expr="returnDate" />
+    </filled>
+  </form>
+
+  <formid="oneWay">
+    <field name="isOneWay">
+      <prompt>
+        Is it a one way trip?
+      </prompt>
+    <option>Yes</option>
+    <option>No</yes>
+    <filled>
+  </form>
+
+  <formid="confirmation">
+    <field name="confirmBooking">
+      <prompt bargein="false">
+        Your flight has been booked!
+      </prompt>
+    </field>
 </vxml>
