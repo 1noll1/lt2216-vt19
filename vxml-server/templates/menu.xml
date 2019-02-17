@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+<menu>
+    Hello and welcome to the flight booking service. To book a flight, please press 1. For information on delays, press 2.
+    <choice next="lab1"/>
+    <choice next="delays"/>
+</menu>
+
+</vxml>
