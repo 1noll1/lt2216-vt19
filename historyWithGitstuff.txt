@@ -1,0 +1,4 @@
+  515  git add --all
+517  git commit -m "make some initial changes, first real commit"
+  518  git push -u origin master
+  519  history > historyWithGitstuff.txt

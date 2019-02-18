@@ -16,3 +16,10 @@ def lab1():
     response = make_response(vxml)
     response.headers["Content-Type"] = "application/xml"
     return response
+
+# @app.route('/menu')
+# def lab1():
+#     vxml = render_template('menu.xml')
+#     response = make_response(vxml)
+#     response.headers["Content-Type"] = "application/xml"
+#     return response
