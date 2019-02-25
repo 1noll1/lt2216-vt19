@@ -32,6 +32,7 @@
   <form id="askFrom">
     <field name="fromField">
       <prompt timeout="15s">
+      <prompt timeout="12s">
         What city are you leaving from?
       </prompt>
       <option>london</option>
@@ -42,7 +43,7 @@
       I didn't understand. You can say London, Paris or New York.
     </nomatch>
     <noinput>
-      Please name your city of departure.
+      Please name your city of departure. You can say London, Paris or New York.
     </noinput>
     <filled>
       <assign name="from" expr="fromField" />
@@ -63,7 +64,7 @@
       I didn't understand. You can say London, Paris or New York.
     </nomatch>
     <noinput>
-      Please name your destination.
+      Please name your destination. You can say London, Paris or New York.
     </noinput>
     <filled>
       <assign name="to" expr="toField" />
@@ -82,7 +83,7 @@
   <form id="askDate">
     <field name="leaveDate">
       <prompt>
-        What date do you want to leave?
+        On what weekday would you like to leave?
       </prompt>
     <option>Monday</option>
     <option>Tuesday</option>
@@ -122,7 +123,7 @@
     <form id="askDateReturn">
       <field name="returnField">
         <prompt>
-          What date do you want to return?
+          On what weekday would you like to return?
         </prompt>
         <option>Monday</option>
         <option>Tuesday</option>
@@ -147,7 +148,7 @@
   <form id="grounding">
     <field name="ToFrom" type="boolean">
       <prompt>
-        Do you want to go from <value expr="from"/> to <value expr="to"/> on <value expr="date"/>?
+        Okay. Do you want to go from <value expr="from"/> to <value expr="to"/> on <value expr="date"/>?
       </prompt>
       <filled>
         <if cond="ToFrom">
@@ -162,7 +163,7 @@
     <form id="groundingReturn">
     <field name="ToFromReturn" type="boolean">
       <prompt>
-        Do you want to go from <value expr="from"/> to <value expr="to"/> on <value expr="date"/> and return on <value expr="returnDate"/>?
+        Okay. Do you want to go from <value expr="from"/> to <value expr="to"/> on <value expr="date"/> and return on <value expr="returnDate"/>?
       </prompt>
       <filled>
         <if cond="ToFrom">

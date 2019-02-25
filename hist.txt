@@ -1,0 +1,500 @@
+   24  python3 lab2.py
+   25  python3 lab2.py
+   26  python3 lab2.py
+   27  python3 lab2.py
+   28  python3 lab2.py
+   29  python3 lab2.py
+   30  python3 lab2.py
+   31  python3 lab2.py
+   32  python3 lab2.py
+   33  python3 lab2.py
+   34  python3 lab2.py
+   35  python3 lab2.py
+   36  python3 lab2.py
+   37  python3 lab2.py
+   38  python3 lab2.py
+   39  python3 lab2.py
+   40  python3 lab2.py
+   41  python3 lab2.py
+   42  python3 lab2.py
+   43  python3 lab2.py
+   44  python3 lab2.py
+   45  python3 lab2.py
+   46  python3 lab2.py
+   47  python3 lab2.py
+   48  python3 lab2.py
+   49  python3 lab2.py
+   50  python3 lab2.py
+   51  python3 lab2test.py
+   52  python3 lab2test.py
+   53  python3 lab2test.py
+   54  python3 lab2test.py
+   55  python3 lab2test.py
+   56  python3 lab2test.py
+   57  python3 lab2test.py
+   58  python3 lab2test.py
+   59  python3 lab2test.py
+   60  python3 lab2test.py
+   61  python3 lab2test.py
+   62  python3 lab2test.py
+   63  python3 lab2test.py
+   64  python3 lab2test.py
+   65  python3 lab2test.py
+   66  python3 lab2test.py
+   67  python3 lab2test.py
+   68  python3 lab2test.py
+   69  python3 lab2test.py
+   70  python3 lab2test.py
+   71  python3 lab2test.py
+   72  python3 lab2test.py
+   73  python3 lab2test.py
+   74  python3 lab2test.py
+   75  python3 lab2test.py
+   76  python3 lab2test.py
+   77  python3 lab2test.py
+   78  python3 lab2test.py
+   79  python3 lab2test.py
+   80  python3 lab2test.py
+   81  python3 lab2test.py
+   82  python3 lab2test.py
+   83  python3 lab2test.py
+   84  python3 lab2test.py
+   85  python3 lab2test.py
+   86  python3 lab2test.py
+   87  python3 lab2test.py
+   88  python3 lab2test.py
+   89  python3 lab2test.py
+   90  python3 lab2test.py
+   91  python3 lab2test.py
+   92  python3 lab2test.py
+   93  python3 lab2test.py
+   94  python3 lab2test.py
+   95  python3 lab2test.py
+   96  python3 lab2test.py
+   97  python3 lab2test.py
+   98  python3 lab2test.py
+   99  python3 lab2test.py
+  100  python3 lab2test.py
+  101  python3 lab2test.py
+  102  python3 lab2test.py
+  103  python3 lab2test.py
+  104  python3 lab2test.py
+  105  python3 lab2test.py
+  106  python3 lab2test.py
+  107  python3 lab2test.py
+  108  python3 lab2test.py
+  109  python3 lab2test.py
+  110  python3 lab2test.py
+  111  python3 lab2test.py
+  112  python3 lab2test.py
+  113  python3 lab2test.py
+  114  python3 lab2test.py
+  115  python3 lab2test.py
+  116  python3 lab2test.py
+  117  python3 lab2test.py
+  118  python3 lab2test.py
+  119  python3 lab2test.py
+  120  python3 lab2test.py
+  121  python3
+  122  python3 lab3test.py
+  123  python3 lab2test.py
+  124  python3 lab2test.py
+  125  python3 lab2test.py
+  126  cd Documents
+  127  cd NLP
+  128  python3 lab2test.py
+  129  cd Documents
+  130  cd NLP
+  131  python3 lab2test.py
+  132  cd /Users/list/Documents/NLP ; env "PYTHONIOENCODING=UTF-8" "PYTHONUNBUFFERED=1" /usr/local/bin/python3 /Users/list/.vscode/extensions/ms-python.python-2018.11.0/pythonFiles/experimental/ptvsd_launcher.py --default --client --host localhost --port 51972 /Users/list/Documents/NLP/testytestworks.py 
+  133  python3
+  134  vimtutor
+  135  ghci
+  136  cd Documents
+  137  cd Coding play
+  138  ls
+  139  cd Coding play
+  140  cd Coding_play
+  141  cd "Coding play"
+  142  ghci baby.h
+  143  ghci baby.hs
+  144  ghci
+  145  ghci
+  146  ghci baby.hs
+  147  ghci
+  148  python3
+  149  ssh-keygen -t rsa -b 4096 -C "linneavmartens@gmail.com"
+  150  eval "$(ssh-agent -s)"
+  151  Host *
+  152  ~/.ssh/config
+  153  exit
+  154  python3
+  155  ssh gusstrlip@mltgpu.flov.se
+  156  ssh gusstrlip@mltgpu.flov.gu.se
+  157  ssh -L8123:localhost:8123 gusstrlip@mltgpu.flov.gu.se
+  158  ssh -L8123:localhost:8123 gusstrlip@mltgpu.flov.gu.se
+  159  ssh -L8122:localhost:8122 gusstrlip@mltgpu.flov.gu.se
+  160  exit
+  161  python3
+  162  cd Documents
+  163  cd Statistical\ Methods
+  164  python3 Assignment 1.py
+  165  python3 Assignment\ 1.py
+  166  python3 Assignment\ 1.py
+  167  python3 Assignment\ 1.py
+  168  python3 Assignment\ 1.py
+  169  python3 Assignment\ 1.py
+  170  python3 Assignment\ 1.py
+  171  python3 Assignment\ 1.py
+  172  python3 Assignment\ 1.py
+  173  python3 Assignment\ 1.py
+  174  python3 Assignment\ 1.py
+  175  python3 Assignment\ 1.py
+  176  python3 Assignment\ 1.py
+  177  python3 Assignment\ 1.py
+  178  python3 Assignment\ 1.py
+  179  python3 Assignment\ 1.py
+  180  python3 Assignment\ 1.py
+  181  python3 Assignment\ 1.py
+  182  python3 Assignment\ 1.py
+  183  python3 Assignment\ 1.py
+  184  python3 Assignment\ 1.py
+  185  python3 Assignment\ 1.py
+  186  python3 Assignment\ 1.py
+  187  python3 Assignment\ 1.py
+  188  python3 Assignment\ 1.py
+  189  python3 Assignment\ 1.py
+  190  python3 Assignment\ 1.py
+  191  python3 Assignment\ 1.py 10
+  192  python3 Assignment\ 1.py 50
+  193  python3 Assignment\ 1.py 50
+  194  python3 Assignment\ 1.py 50
+  195  python3 Assignment\ 1.py 50
+  196  python3 Assignment\ 1.py 50 sherlock.txt
+  197  python3 Assignment\ 1.py 50 sherlock.txt
+  198  python3 Assignment\ 1.py 50 sherlock.txt
+  199  python3 Assignment\ 1.py 50 sherlock.txt
+  200  python3 Assignment\ 1.py 50 sherlock.txt
+  201  python3 Assignment\ 1.py 50 sherlock.txt
+  202  python3 Assignment\ 1.py 50 sherlock.txt
+  203  python3 Assignment\ 1.py 50 sherlock.txt
+  204  python3 Assignment\ 1.py 50 sherlock.txt
+  205  python3 Assignment\ 1.py 50 sherlock.txt
+  206  python3 Assignment\ 1.py 50 sherlock.txt
+  207  python3 Assignment\ 1.py 50 sherlock.txt
+  208  python3 Assignment\ 1.py 10 sherlock.txt
+  209  python3 Assignment\ 1.py 10 sherlock.txt
+  210  python3 Assignment\ 1.py 10 sherlock.txt
+  211  python3 Assignment\ 1.py 10 sherlock.txt
+  212  python3 Assignment\ 1.py 10 sherlock.txt
+  213  python3 Assignment\ 1.py 10 sherlock.txt
+  214  python3 Assignment\ 1.py 10 sherlock.txt
+  215  python3 Assignment\ 1.py --10 sherlock.txt
+  216  python3 Assignment\ 1.py --10 sherlock.txt
+  217  python3 Assignment\ 1.py 10 sherlock.txt
+  218  python3 Assignment\ 1.py sherlock.txt --10
+  219  python3 Assignment\ 1.py sherlock.txt 10
+  220  python3 Assignment\ 1.py sherlock.txt 10
+  221  python3 Assignment\ 1.py sherlock.txt 20
+  222  python3 Assignment\ 1.py 20 sherlock.txt
+  223  python3 Assignment\ 1.py sherlock.txt integer
+  224  python3 Assignment\ 1.py sherlock.txt -integer
+  225  python3 Assignment\ 1.py sherlock.txt 10
+  226  python3 Assignment\ 1.py sherlock.txt 10
+  227  python3 Assignment\ 1.py sherlock.txt
+  228  python3 Assignment\ 1.py sherlock.txt 50
+  229  python3 Assignment\ 1.py sherlock.txt --50
+  230  python3 Assignment\ 1.py sherlock.txt
+  231  python3 Assignment\ 1.py sherlock.txt 20
+  232  python3 Assignment\ 1.py sherlock.txt -20
+  233  python3 Assignment\ 1.py sherlock.txt --integer 20
+  234  python3 Assignment\ 1.py sherlock.txt --top 50
+  235  python3 Assignment\ 1.py sherlock.txt --top 50
+  236  python3 Assignment\ 1.py sherlock.txt --top 10
+  237  python3 Assignment\ 1.py sherlock.txt --top 10
+  238  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower
+  239  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  240  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  241  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  242  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  243  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  244  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=False
+  245  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  246  python3 Assignment\ 1.py sherlock.txt --top 40 --to_lower=True
+  247  python3 Assignment\ 1.py sherlock.txt --top 40 --to_lower=False
+  248  python3 Assignment\ 1.py sherlock.txt --top 40 --to_lower=False
+  249  python3 Assignment\ 1.py sherlock.txt --top 40 --to_lower=False
+  250  python3 Assignment\ 1.py sherlock.txt --top 40 --to_lower=False
+  251  python3 Assignment\ 1.py sherlock.txt --top 40 --to_lower=True
+  252  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=False
+  253  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  254  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  255  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=False
+  256  python3 Assignment\ 1.py sherlock.txt
+  257  python3 Assignment\ 1.py sherlock.txt
+  258  python3 Assignment\ 1.py sherlock.txt --integer 15
+  259  python3 Assignment\ 1.py sherlock.txt --top 3
+  260  python3 Assignment\ 1.py sherlock.txt --top 3
+  261  python3 Assignment\ 1.py sherlock.txt --top 3
+  262  python3 Assignment\ 1.py sherlock.txt --top 3 to_lower
+  263  python3 Assignment\ 1.py sherlock.txt --top 3 True
+  264  python3 Assignment\ 1.py sherlock.txt --top 3
+  265  python3 Assignment\ 1.py sherlock.txt --top 10
+  266  python3 Assignment\ 1.py sherlock.txt --top 10 make_lower=True
+  267  python3 Assignment\ 1.py sherlock.txt --top 10 --make_lower=True
+  268  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  269  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  270  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=False
+  271  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=False
+  272  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower=True
+  273  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower=True
+  274  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower=False
+  275  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower=False
+  276  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  277  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower=True
+  278  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  279  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  280  python3 Assignment\ 1.py sherlock.txt --top 30
+  281  python3 Assignment\ 1.py sherlock.txt --top 30
+  282  python3 Assignment\ 1.py sherlock.txt --top 30
+  283  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  284  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  285  python3 Assignment\ 1.py sherlock.txt --top 30
+  286  python3 Assignment\ 1.py sherlock.txt --top 30
+  287  python3 Assignment\ 1.py sherlock.txt --top 30
+  288  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  289  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  290  python3 Assignment\ 1.py sherlock.txt --top 30
+  291  python3 Assignment\ 1.py sherlock.txt --top 30
+  292  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  293  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  294  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  295  python3 Assignment\ 1.py sherlock.txt --top 30
+  296  python3 Assignment\ 1.py sherlock.txt --top 30
+  297  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  298  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  299  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  300  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  301  python3 Assignment\ 1.py sherlock.txt --top 30
+  302  python3 Assignment\ 1.py sherlock.txt --top 30 
+  303  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  304  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  305  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  306  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  307  python3 Assignment\ 1.py sherlock.txt --top 30
+  308  python3 Assignment\ 1.py sherlock.txt --top 30
+  309  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  310  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  311  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  312  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  313  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  314  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  315  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower
+  316  python3 Assignment\ 1.py sherlock.txt --top 10
+  317  python3 Assignment\ 1.py sherlock.txt --top 10
+  318  python3 Assignment\ 1.py sherlock.txt --top 10
+  319  python3 Assignment\ 1.py -h
+  320  python3 Assignment\ 1.py -h
+  321  python3 Assignment\ 1.py -h
+  322  python3 Assignment\ 1.py -h
+  323  python3 Assignment\ 1.py -h
+  324  python3 Assignment\ 1.py -h
+  325  python3 Assignment\ 1.py -h
+  326  python3 Assignment\ 1.py sherlock.txt --top 10
+  327  python3 Assignment\ 1.py sherlock.txt --top 10 --to_lower
+  328  python3
+  329  python3 Assignment\ 1.py -h
+  330  python3 Assignment\ 1.py sherlock.txt
+  331  python3 Assignment\ 1.py sherlock.txt --to_lower
+  332  python3 Assignment\ 1.py sherlock.txt --30 --to_lower
+  333  python3 Assignment\ 1.py sherlock.txt --top 30 --to_lower
+  334  pip install beautifulsoup 4
+  335  pip install beautifulsoup4
+  336  pip install beautifulsoup4 --user
+  337  python3
+  338  pip install beautifulsoup4
+  339  python3
+  340  pip install BeautifulSoup4
+  341  python3
+  342  git config --global user.name "Linnea"
+  343  git config --global user.email "linneavmartens@gmail.com"
+  344  ssh gusstrlip@student.gu.se
+  345  ssh gusstrlip@mltgpu.flov.gu.se
+  346  python3
+  347  echo "# LinsProjekt"
+  348  git init
+  349  git add README.md
+  350  echo "# LinsProjekt" >> README.md
+  351  git remote add origin git@github.com:1noll1/LinsProjekt.git
+  352  git push -u origin master
+  353  mkdir ~/LinsProjekt
+  354  cd LinsProjekt
+  355  git init
+  356  touch Readme.txt
+  357  git status
+  358  git add Readme.txt
+  359  git commit -m "Add Readme.txt"
+  360  git remote add origin https://github.com/1noll1/LinsProjekt.git
+  361  git remote -v
+  362  git push
+  363  git push --set-upstream origin master
+  364  python3
+  365  ssh eduserv
+  366  git@github.com:1noll1/lt2216-vt19.git
+  367  ssh git@github.com:1noll1/lt2216-vt19.git
+  368  let101in
+  369  cd Documents
+  370  .
+  371  ..
+  372  cd ..
+  373  cd..
+  374  cd ..
+  375  cd Dialogue/ Systems
+  376  cd Dialogue/ Systems
+  377  cd Dialogue\ Systems
+  378  git clone git@github.com:1noll1/lt2216-vt19.git
+  379  export FLASK_APP=app.py
+  380  export FLASK_ENV=development
+  381  flask run --port 8093
+  382  ssh git@github.com:1noll1/lt2216-vt19.git
+  383  eduserv.flov.gu.se
+  384  ssh gusstrlip@mltgpu.flov.gu.se
+  385  ssh gusstrlip@mltgpu.flov.se
+  386  ssh gusstrlip@mltgpu.flov.gu.se
+  387  ~/.ssh/config
+  388  /.ssh/config
+  389  ssh gusstrlip@mltgpu.flov.gu.se
+  390  ls -al ~/.ssh
+  391  ls -al ~/.ssh -h
+  392  Host 
+  393  Host *
+  394  AddKeysToAgent yes
+  395  eval "$(ssh-agent -s)"
+  396  Host *
+  397  Host *
+  398  AddKeysToAgent yes
+  399  eval "$(ssh-agent -s)"
+  400  ~/.ssh/config
+  401  ls -al ~/.ssh
+  402  eval "$(ssh-agent -s)"
+  403  gusstrlip@mltgpu.flov.gu.se
+  404  ssh gusstrlip@mltgpu.flov.gu.se
+  405  ssh gusstrlip@mltgpu.flov.gu.se
+  406  ssh gusstrlip@eduserv.flov.gu.se
+  407  ssh gusstrlip@eduserv.flov.gu.se
+  408  jupyter notebook
+  409  python3
+  410  pip3 install jupyter
+  411  jupyter notebook
+  412  jupyter-notebook
+  413  v
+  414  * sudo apt-get remove ipython
+  415  pip3 install --upgrade --force-reinstall --no-cache-dir jupyter
+  416  pip install --upgrade pip
+  417  pip install --upgrade --user pip
+  418  jupyter notebook
+  419  ssh gusstrlip@eduserv.flov.gu.se
+  420  cd Documents
+  421  cd Dialogue\ Systems
+  422  git clone git@github.com:1noll1/lt2216-vt19.git
+  423  ssh git clone git@github.com:1noll1/lt2216-vt19.gi
+  424  git clone git@github.com:1noll1/lt2216-vt19.git
+  425  cd .ssh
+  426  cd
+  427  cd .ssh
+  428  ls
+  429  less id_rsa.pub
+  430  ssh -T git@github.com
+  431  ssh -T git@github.com
+  432  ssh -T git@github.com
+  433  ls -al ~/.ssh
+  434  nano ~/.ssh/config
+  435  eval "$(ssh-agent -s)"
+  436  ssh-add -K ~/.ssh/id_rsa
+  437  ssh -T git@github.com
+  438  ssh -T git@github.com
+  439  ssh-keygen -t rsa -b 4096 -C linneavmartens@gmail.com
+  440  nano ~/.ssh/config
+  441  eval "$(ssh-agent -s)"
+  442  ssh-add -K ~/.ssh/id_rsa
+  443  ssh-add -K ~/.ssh/id_rsa
+  444  pbcopy < ~/.ssh/id_rsa.pub
+  445  ssh -T git@github.com
+  446  ssh -T git@github.com
+  447  ls -al ~/.ssh
+  448  nano ~/.ssh/config
+  449  eval "$(ssh-agent -s)"
+  450  ssh-add -K ~/.ssh/id_rsa
+  451  ssh -T git@github.com
+  452  eval "$(ssh-agent -s)"
+  453  ssh-add -l
+  454  ls
+  455  nano ~/.ssh/config
+  456  ssh-keygen -t rsa -b 4096 -C linneavmartens@gmail.com
+  457  ssh-keygen -t rsa -b 4096 -C linneavmartens@gmail.com
+  458  eval "$(ssh-agent -s)"
+  459  nano ~/.ssh/config
+  460  ssh-add -K ~/.ssh/id_rsa_local
+  461  pbcopy < ~/.ssh/id_rsa_local.pub
+  462  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCZgGrmQ9zcUfXzYa+XQBgdSgu0fGEps3anovLwtOaLZyQeOLsPNKNV7uhTr/HXAW0dyASTjK7pXIKgtLdT1rLlfmOYdDUDQ/I3sSjPQCamgeZQwrMkmtw1c7XzfHt/huOBJw1gnb4ptt/Q/3twwZZX6ABwuDPp10mo2xWGL8nq9QvO0BBoDNAz/lcM0+3hrN2QX+5GypvaBZXIUoao4bM65KP1pnJSgwg1XxUyyqFTtVoXvTTCILAkMywfNLq84ndRpaEoRQSBSSwETbobQqa7Pt8Rk8fPWcyHChHeV4WQseQ1z7mwyHb8Qi6NL+3ZzklB0eobemusQZ1n3QJ8QkELao0SgJ5elIgjYs+DjR4Rf7Ob9dMjF1DEPMG0UutU+b9viWq2ab2ihVcjIN2plaRB3NLpKE9RviwTXmnX5aXWoofSzW/XVSVgQsX9SlIrknX8W0xty2+T2GE7K5V7lpqLDCdnDgf9hM+1kCZMg6UHbpVIvXrRk1EmMpkvTcJINqCM2S03MeEBkEHFBHrN9h4iVWVXGcwt9cs8k09/2DOa8llpvTAw4UUyDGQRpbJjaTb3Ji9tnmwOy5gMELMzUodOJvIyHDYg7fBf035cTmIRTPqnMj0VGBodDyi/GoRPDjeue3PHBqwoJPUC4pLcDcSt0VazQPLsy9Ol8DCSqHqSTQ== linneavmartens@gmail.com
+  463  ssh -T git@github.com
+  464  cd Documents
+  465  cd Dialogue\ Systems
+  466  git clone git@github.com:1noll1/lt2216-vt19.git
+  467  ls
+  468  ssh gusstrlip@eduserv.flov.gu.se
+  469  exit
+  470  ssh gusstrlip@eduserv.flov.gu.se
+  471  python3 -m pip install --upgrade pip
+  472  python3 -m pip install jupyter
+  473  jupyter notebook
+  474  gusstrlip@mltgpu.gu.se
+  475  ssh gusstrlip@mltgpu.gu.se
+  476  ssh gusstrlip@mltgpu.flov.gu.se
+  477  python3
+  478  ssh -L8321:localhost:8321 gusstrlip@mltgpu.flov.gu.se
+  479  ssh -L8321:localhost:8321 gusstrlip@mltgpu.flov.gu.se
+  480  git branch
+  481  cd Documents
+  482  ls
+  483  cd Dialogue\ sSystems
+  484  cd Dialogue\ Systems
+  485  ls
+  486  ls
+  487  cd lt2216-vt19
+  488  ls
+  489  git status
+  490  ll
+  491  git commit
+  492  git add vxml-server/templates/lab1.xml
+  493  ls
+  494  git status
+  495  git commit
+  496  git branch
+  497  git status
+  498  git config --global user.name "Linnea Strand"
+  499  git config --global user.email "gusstrlip@student.gu.se"
+  500  git config --list
+  501  cd Documents
+  502  cd Dialogue\ Systems
+  503  ll
+  504  ls
+  505  cd lt2216-v19
+  506  cd lt2216-vt19
+  507  ls
+  508  git status
+  509  ls
+  510  ls
+  511  cd ..
+  512  ls
+  513  cd lt2216-vt19/
+  514  ls
+  515  git add --all
+  516  git commit "make some initial changes, first real commit"
+  517  git commit -m "make some initial changes, first real commit"
+  518  git push -u origin master
+  519  history > historyWithGitstuff.txt
+  520  vim historyWithGitstuff.txt 
+  521  ls
+  522  cat historyWithGitstuff.txt 
+  523  history > hist.txt

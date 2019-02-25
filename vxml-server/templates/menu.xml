@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+<menu>
+    Hello and welcome to the flight booking service.
+    <choice next="lab1" accept="approximate">booking</choice>
+    <choice next="delays" accept="approximate">information</choice>
+</menu>
+</vxml>
