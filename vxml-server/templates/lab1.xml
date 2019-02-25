@@ -3,7 +3,7 @@
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
       
   <nomatch>
-    I didn't understand.
+    Sorry, I didn't understand.
     <reprompt/>
   </nomatch>
   
@@ -15,8 +15,8 @@
   <!-- Data model -->
   <var name="from" />
   <var name="to" />
-  <var name="leaveDate">
-  <var name="returnDate">
+  <var name="date" />
+  <var name="returnDate" />
 
   <!-- State machine -->
   <form id="welcome">
@@ -31,13 +31,19 @@
 
   <form id="askFrom">
     <field name="fromField">
-      <prompt>
+      <prompt timeout="15s">
         What city are you leaving from?
       </prompt>
       <option>london</option>
       <option>paris</option>
       <option>new york</option>
     </field>
+    <nomatch>
+      I didn't understand. You can say London, Paris or New York.
+    </nomatch>
+    <noinput>
+      Please name your city of departure.
+    </noinput>
     <filled>
       <assign name="from" expr="fromField" />
       <goto next="#askTo" />
@@ -53,29 +59,27 @@
       <option>paris</option>
       <option>new york</option>
     </field>
+    <nomatch>
+      I didn't understand. You can say London, Paris or New York.
+    </nomatch>
+    <noinput>
+      Please name your destination.
+    </noinput>
     <filled>
-      <if cond=="from == 'to' ">
-        <prompt bargein=false>
-          Your destination must be different from the city of departure. Please name a city that is not <value expr="from">
+      <assign name="to" expr="toField" />
+      <if cond="from == to ">
+        <prompt bargein="false">
+          Your destination must be different from the city of departure. Please name a city that is not <value expr="from" />.
         </prompt>
-        <clear namelist="to">
-        <goto next="#toField">
+        <clear namelist="to" />
+        <goto next="#askTo" />
+      <else />
+        <goto next="#askDate" />
       </if>
-      <goto next="#askDate" />
     </filled>
   </form>
 
-  <formid="grounding">
-    <prompt>
-      Do you want to go from <value expr="from"> to <value expr="to"> on <value expr="leaveDate">?
-    </prompt>
-    <filled>
-      <goto next="#confirmBooking">
-    </filled>
-  </form>
-
-
-  <formid="askDate">
+  <form id="askDate">
     <field name="leaveDate">
       <prompt>
         What date do you want to leave?
@@ -88,44 +92,93 @@
     <option>Saturday</option>
     <option>Sunday</option>
     </field>
+    <nomatch>
+      Please name the weekday on which you would like to travel.
+    </nomatch>
+    <noinput>
+      Please state your date of departure.
+    </noinput>
     <filled>
-      <assign name="leaveDate" expr="leaveDate" />
-      <goto next="oneWay">
+      <assign name="date" expr="leaveDate" />
+      <goto next="#oneWay" />
     </filled>
   </form>
 
-  <formid="askDate">
-    <field name="returnDate">
-      <prompt>
-        What date do you want to return?
-      </prompt>
-    <option>Monday</option>
-    <option>Tuesday</option>
-    <option>Wednesday</option>
-    <option>Thursday</option>
-    <option>Friday</option>
-    <option>Saturday</option>
-    <option>Sunday</option>
-    </field>
-    <filled>
-      <assign name="returnDate" expr="returnDate" />
-    </filled>
-  </form>
-
-  <formid="oneWay">
-    <field name="isOneWay">
+  <form id="oneWay">
+    <field name="isOneWay" type="boolean">
       <prompt>
         Is it a one way trip?
       </prompt>
-    <option>Yes</option>
-    <option>No</yes>
-    <filled>
+    </field>
+      <filled>
+        <if cond="isOneWay">
+          <goto next="#grounding" />
+        <else />
+          <goto next="#askDateReturn" />
+        </if>
+      </filled>
   </form>
 
-  <formid="confirmation">
-    <field name="confirmBooking">
-      <prompt bargein="false">
-        Your flight has been booked!
+    <form id="askDateReturn">
+      <field name="returnField">
+        <prompt>
+          What date do you want to return?
+        </prompt>
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>Saturday</option>
+        <option>Sunday</option>
+      </field>
+    <nomatch>
+      Please name the weekday on which you would like to return.
+    </nomatch>
+    <noinput>
+      Please state your return date.
+    </noinput>
+    <filled>
+      <assign name="returnDate" expr="returnField" />
+      <goto next="#groundingReturn" />
+    </filled>
+  </form>
+
+  <form id="grounding">
+    <field name="ToFrom" type="boolean">
+      <prompt>
+        Do you want to go from <value expr="from"/> to <value expr="to"/> on <value expr="date"/>?
       </prompt>
+      <filled>
+        <if cond="ToFrom">
+          <goto next="#confirmation" />
+        <else />
+          <goto next="#askTo" />
+        </if>
+      </filled>
     </field>
+  </form>
+
+    <form id="groundingReturn">
+    <field name="ToFromReturn" type="boolean">
+      <prompt>
+        Do you want to go from <value expr="from"/> to <value expr="to"/> on <value expr="date"/> and return on <value expr="returnDate"/>?
+      </prompt>
+      <filled>
+        <if cond="ToFrom">
+          <goto next="#confirmation" />
+        <else />
+          <goto next="#askDateReturn" />
+        </if>
+      </filled>
+    </field>
+  </form>
+
+  <form id="confirmation">
+    <block>
+      <prompt bargein="false">
+        Your flight has been booked! Thank you and good bye.
+      </prompt>
+    </block>
+  </form>
 </vxml>
