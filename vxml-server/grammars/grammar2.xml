@@ -14,8 +14,8 @@
 
 <rule id="action1">
   <one-of>
-     <item> turn on <tag> out = 'on'; </tag></item>
-     <item> turn off <tag> out = 'off'; </tag></item>
+     <item> turn on <tag> out = 'turn on'; </tag></item>
+     <item> turn off <tag> out = 'turn off'; </tag></item>
   </one-of>
 </rule>
 
@@ -26,10 +26,20 @@
   </one-of>
 </rule>
 
-<rule id="root">
+<rule id="root" scope="public">
+    <item repeat="0-1"> <ruleref uri="#politeness" /></item>
     <one-of>
         <item><ruleref uri="#action1" /> the <ruleref uri="#object" /><tag>out.action=rules.action1</tag></item>
         <item><ruleref uri="#action2" /> the <ruleref uri="#object" /><tag>out.action=rules.action2</tag></item>
     </one-of>
+    <item repeat="0-1"> <ruleref uri="#politeness" /></item>
 </rule>
+
+<rule id="politeness">
+    <one-of>
+        <item>please</item>
+        <item>could you</item>
+    </one-of>
+</rule>
+
 </grammar>

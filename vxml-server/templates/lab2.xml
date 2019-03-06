@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <vxml version="2.0">
+
   <nomatch>
     I didn't understand.
   </nomatch>
@@ -11,17 +12,38 @@
   <form id="test">
     <field name="foo">
       <prompt>Say something!</prompt>
-      <grammar src="grammars/grammar2.xml"/>
+      <grammar src="grammars/lab2.xml"/>
     </field>
     <filled>
-	<prompt>
+	<prompt bargein="false">
 	  You said: <value expr="foo$.utterance"/>,
-	  with the interpretation <value expr="foo$.interpretation"/>
-	  and with a confidence of <value expr="foo$.confidence"/>
+	  as said by  <value expr="foo$.interpretation"/>.
+          with a confidence score of <value expr="foo$.confidence"/>
 	  <break time="2s"/>
 	</prompt>
-	<goto next="#test"/>
+	<goto next="#home"/>
     </filled>
   </form>
 
+  <form id="home">
+    <field name="promptUser">
+        <prompt>Welcome home. What would you like to do?</prompt>
+        <grammar src="grammars/grammar2.xml"/>
+    </field>
+    <filled>
+        <if cond="promptUser$.confidence &gt; 0.7">
+            <prompt> Okay. <value expr="promptUser$.interpretation.action"/>
+            the
+            <value expr="promptUser$.interpretation.object"/>.</prompt>
+        <elseif cond="promptUser$.confidence &gt; 0.5"/>
+            <prompt> Did you ask me to <value expr="promptUser$.interpretation.action"/>
+            the
+            <value expr="promptUser$.interpretation.object"/>?</prompt>
+        <else/>
+            <prompt bargein="false">Sorry, I didn't get that.</prompt>
+            <reprompt/>
+        </if>
+        <goto next="#home"/>
+    </filled>
+    </form>
 </vxml>

@@ -17,7 +17,6 @@ def lab1():
     response.headers["Content-Type"] = "application/xml"
     return response
 
-<<<<<<< HEAD
 @app.route('/lab2')
 def lab2():
     vxml = render_template('lab2.xml')
@@ -35,11 +34,10 @@ def lab3():
 @app.route('/grammars/<path:path>')
 def send_grammar(path):
     return send_from_directory('grammars', path)
-=======
+
 # @app.route('/menu')
 # def lab1():
 #     vxml = render_template('menu.xml')
 #     response = make_response(vxml)
 #     response.headers["Content-Type"] = "application/xml"
 #     return response
->>>>>>> 20786d31cd280f7d4383999d4177ccdfe5d55936
