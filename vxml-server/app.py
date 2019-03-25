@@ -31,13 +31,34 @@ def lab3():
     response.headers["Content-Type"] = "application/xml"
     return response
 
+@app.route('/lab4')
+def lab4():
+    vxml = render_template('lab4.xml')
+    response = make_response(vxml)
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
 @app.route('/grammars/<path:path>')
 def send_grammar(path):
     return send_from_directory('grammars', path)
 
-# @app.route('/menu')
-# def lab1():
-#     vxml = render_template('menu.xml')
-#     response = make_response(vxml)
-#     response.headers["Content-Type"] = "application/xml"
-#     return response
+@app.route('/menu')
+def menu():
+    vxml = render_template('menu.xml')
+    response = make_response(vxml)
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
+@app.route('/delays')
+def delays():
+    vxml = render_template('delays.xml')
+    response = make_response(vxml)
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
+@app.route('/goback')
+def goback():
+    vxml = render_template('goback.xml')
+    response = make_response(vxml)
+    response.headers["Content-Type"] = "application/xml"
+    return response

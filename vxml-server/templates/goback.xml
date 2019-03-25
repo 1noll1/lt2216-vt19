@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD SYNTHESIS 1.0//EN"
+"http://www.w3.org/TR/voicexml20/vxml.dtd">
+
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+
+  <link next="menu.xml">
+    <grammar>
+       <![CDATA[(start over)]]>
+    </grammar>
+  </link>
+
+  <form id="returnMenu">
+    <field name="goBack">
+      <prompt timeout="2000">
+        Would you like to return to the main menu?
+      </prompt>
+      <option>yes</option>
+      <option>no</option>
+      <nomatch>
+        I didn't understand.
+      <reprompt/>
+      </nomatch>
+      <noinput>
+        I didn't hear you say anything.
+        <reprompt/>
+      </noinput>
+    </field>
+    <filled>
+      <if cond="goBack == 'yes'">
+        <goto next="menu.xml" />
+      <else />
+        <prompt>Thank you for your call! Good bye.</prompt>
+      </if>
+    </filled>
+  </form>
+
+</vxml>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" tag-format="semantics/1.0" root="yn">
+
+<script> <![CDATA[
+
+  var universe = ['Vienna', 'Stockholm', 'London', 'Madrid', 'Amsterdam', Nicosia];
+  var queue = [];
+  var startCity = universe.randomElement();
+  var currentCity;
+
+  function beginsWith(firstLetter) {
+    return somestring.startsWith(firstLetter)
+  }
+
+  function Match(lastLetter) {
+  universe.some(firstLetter)
+  }
+
+  function pop(universe) {
+  universe.pop(index)
+  }
+
+  function lastLetter(city) {
+    return (city[city.length -1]);
+  }
+
+  function firstLetter(city) {
+    return (city[city.length 0]);
+
+  Array.prototype.randomElement = function () {
+    return this[Math.floor(Math.random() * this.length)]
+  }
+
+  ]]>
+</script>
+
+
+  <prompt>
+      Hmm... No fair! There is no city whose name begins with x.
+  </prompt>
+
+
+<!-- Data model -->
+<var name="city">
+<var name="nextCity">
+
+<!-- State machine -->
+
+<noinput>
+  <prompt>
+    I'm waiting.
+  </prompt>
+</noinput>
+
+<form id="intro">
+  <field name="rules" type="boolean">
+    <prompt>
+      Let's play a game!
+      I'll name a capital city in Europe, and you give me the name of another European capital
+      that begins with the last letter of the previous one and so on. Get it?
+    </prompt>
+  </field>
+  <filled>
+      <if cond="rules">
+        <prompt>
+          Perfect! Let's play.
+        </prompt>
+        <goto next="#play">
+      <else >
+        <goto next="example">
+      </if>
+  </filled>
+  <field name="example" type="boolean">
+    <prompt bargein="false">
+      I say "Stockholm", which ends in an "M". Then you say "Minsk". Then I name a city
+      that begins with the letter "K". Are you with me?
+    </prompt>
+  </field>
+  <filled> 
+    <if cond="example">
+      <prompt>
+        Great!
+      </prompt>
+      <goto next="#begin">
+    <else />
+      <reprompt />
+    </if>
+  </filled>
+</form>
+
+<form id="begin">
+  <field name="firstCity">
+    <prompt>
+      I say <value expr="startCity"/>. Your turn.
+    </prompt>
+  </field>
+  <filled>
+    <assign name="currentCity" expr="firstCity" />
+
+    <if cond="lastLetter" == "firstLetter">
+        <goto next="#continue">
+    <else />
+      <prompt>
+        Hehe, nope.
+      </prompt>
+      <goto next="#begin">
+    </if>
+  </filled>
+</form>
+
+<form id="continue">
+  <field name="cityName">
+    <prompt>
+      <value expr="startCity"/>
+    </prompt>
+  </field>
+  <filled>
+    <assign name="currentCity" expr="cityName" />
+
+    <if cond="lastLetter" == "firstLetter">
+        <goto next="#continue">
+    <else />
+      <prompt>
+        Hehe, nope.
+      </prompt>
+      <goto next="#begin">
+    </if>
+  </filled>
+</form>
+
+<form id="finish">
+  <block>
+    <prompt>
+      Yay! Well done.
+    </promp>
+  </block>
+</form>
+
+<!-- 
+'Andorra la Vella'
+'Amsterdam'
+'Berlin'
+'Belgrade'
+'Athens'
+'Bratislava'
+'Ankara'
+'Bern'
+'Bucharest'
+'Copenhagen'
+'Brussels'
+'Chișinău'
+'Dublin'
+'Douglas'
+'Gibraltar'
+'Helsinki'
+'Kiev'
+'Lisbon'
+'London'
+'Ljubljana'
+'Luxembourg'
+'Madrid'
+'Minsk'
+'Monaco'
+'Moscow'
+'Nicosia'
+'Oslo'
+'Paris'
+'Podgorica'
+'Prague'
+'Pristina'
+'Riga'
+'Rome'
+'Reykjavik'
+'Sarajevo'
+'Stockholm'
+'Skopje'
+'Saint Helier'
+'St. Peter Port'
+'Sofia'
+'Tallinn'
+'Tirana'
+'Tórshavn'
+'City of San Marino'
+'Valletta'
+'Vatican City'
+'Vienna'
+'Vilnius'
+'Vaduz'
+'Warsaw'
+'Zagreb'
+
+-->

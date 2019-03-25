@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" tag-format="semantics/1.0" root="init">
+
+<rule id="init" scope="public">
+
+    <item repeat="0-1">
+        <ruleref uri="#verby"/>
+    </item>
+
+	<one-of>
+		<item>
+            <ruleref uri="#fromCity"/>
+            <tag> out.fromCity = rules.fromCity; </tag>
+	    </item>
+
+        <item>
+            <ruleref uri="#destination"/>
+            <tag> out.destination = rules.destination; </tag>
+        </item>
+
+        <item>
+            <ruleref uri="#fromCity"/>
+            <ruleref uri="#destination"/>
+            <tag> out.fromCity = rules.fromCity; out.destination = rules.destination; </tag>
+        </item>
+
+        <item>
+            <ruleref uri="#fromCity"/>
+            <ruleref uri="#destination"/>
+            <ruleref uri="#leaveDate"/>
+            <tag> out.fromCity = rules.fromCity; out.destination = rules.destination; out.leaveDate = rules.leaveDate; </tag>
+        </item>
+
+        <item>
+            <ruleref uri="#fromCity"/>
+            <ruleref uri="#destination"/>
+            <ruleref uri="#leaveDate"/>
+            <ruleref uri="#returnDate"/>
+            <tag> out.fromCity = rules.fromCity; out.toCity = rules.toCity; out.outDate = rules.outDate; out.returnDate = rules.returnDate; </tag>
+        </item>
+
+        <item>
+            <ruleref uri="#fromCity"/>
+            <ruleref uri="#destination"/>
+            <ruleref uri="#foodMenu"/>
+            <tag> out.fromCity = rules.fromCity; out.toCity = rules.toCity; out.outDate = rules.outDate; out.returnDate = rules.returnDate; </tag>
+        </item>
+   </one-of>
+</rule> 
+
+<rule id="verby">
+    <one-of>
+        <item>I would like</item>
+        <item>I'd like</item>
+        <item>I want</item>
+    </one-of>
+    <one-of>
+        <item>to book a flight</item>
+        <item>to fly to</item>
+        <item>to travel to</item>
+        <item>to go to</item>
+    </one-of>
+</rule>
+
+
+<rule id="fromCity" scope="public">
+  <item repeat="0-1">from</item>
+    <one-of>
+        <item>london<tag>out = 'london';</tag></item>
+        <item>paris<tag>out = 'paris';</tag></item>
+        <item>new york<tag>out = 'new york';</tag></item>
+    </one-of>
+</rule>
+
+<rule id="destination" scope="public">
+  <item repeat="0-1">to</item>
+    <one-of>
+        <item>london<tag>out = 'london';</tag></item>
+        <item>paris<tag>out = 'paris';</tag></item>
+        <item>new york<tag>out = 'new york';</tag></item>
+    </one-of>
+</rule>
+
+<rule id="leaveDate" scope="public">
+  <item repeat="0-1">on</item>
+    <one-of>
+        <item>Monday <tag> out = 'monday'; </tag> </item>
+        <item>Tuesday <tag> out = 'tuesday'; </tag></item>
+        <item>Wednesday <tag> out = 'wednesday'; </tag></item>
+        <item>Thursday <tag> out = 'thursday'; </tag></item>
+        <item>Friday <tag> out = 'friday'; </tag></item>
+        <item>Saturday <tag> out = 'saturday'; </tag></item>
+        <item>Sunday <tag> out = 'sunday'; </tag></item>
+    </one-of>
+</rule>
+
+
+<rule id="returnDate" scope="public">
+	<item repeat="0-1">returning</item>
+    <one-of>
+        <item>Monday <tag> out = 'monday'; </tag> </item>
+        <item>Tuesday <tag> out = 'tuesday'; </tag></item>
+        <item>Wednesday <tag> out = 'wednesday'; </tag></item>
+        <item>Thursday <tag> out = 'thursday'; </tag></item>
+        <item>Friday <tag> out = 'friday'; </tag></item>
+        <item>Saturday <tag> out = 'saturday'; </tag></item>
+        <item>Sunday <tag> out = 'sunday'; </tag></item>
+    </one-of>
+</rule>
+
+<rule id ="foodMenu">
+    <one-of>
+        <item>grilled salmon <tag> out = 'fish'; </tag></item>
+        <item>salmon <tag> out = 'fish'; </tag></item>
+        <item>pasta pesto <tag> out = 'pasta'; </tag></item>
+        <item>pasta <tag> out = 'pasta'; </tag></item>
+        <item>nothing <tag> out = 'nothing'; </tag></item>
+        <item>not hungry <tag> out = 'nothing'; </tag></item>
+    </one-of>
+</rule>
+
+</grammar>
