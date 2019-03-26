@@ -36,30 +36,25 @@
             <ruleref uri="#destination"/>
             <ruleref uri="#leaveDate"/>
             <ruleref uri="#returnDate"/>
-            <tag> out.fromCity = rules.fromCity; out.toCity = rules.toCity; out.outDate = rules.outDate; out.returnDate = rules.returnDate; </tag>
+            <tag> out.fromCity = rules.fromCity; out.destination = rules.destination; out.outDate = rules.outDate; out.returnDate = rules.returnDate; </tag>
         </item>
 
         <item>
             <ruleref uri="#fromCity"/>
             <ruleref uri="#destination"/>
             <ruleref uri="#foodMenu"/>
-            <tag> out.fromCity = rules.fromCity; out.toCity = rules.toCity; out.outDate = rules.outDate; out.returnDate = rules.returnDate; </tag>
+            <tag> out.fromCity = rules.fromCity; out.destination = rules.destination; out.outDate = rules.outDate; out.returnDate = rules.returnDate; </tag>
         </item>
    </one-of>
 </rule> 
 
 <rule id="verby">
-    <one-of>
-        <item>I would like</item>
-        <item>I'd like</item>
-        <item>I want</item>
-    </one-of>
-    <one-of>
-        <item>to book a flight</item>
-        <item>to fly to</item>
-        <item>to travel to</item>
-        <item>to go to</item>
-    </one-of>
+	<one-of>
+		<item>I want to go</item>
+		<item>I would like to go</item>
+		<item>I want to travel</item>
+		<item>I would like to travel</item>
+	</one-of>
 </rule>
 
 

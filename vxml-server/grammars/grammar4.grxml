@@ -10,25 +10,25 @@
 	<one-of>
 		<item>
             <ruleref uri="#fromCity"/>
-            <tag> out.fromCity = rules.fromCity; </tag>
+            <tag> out.fromField = rules.fromCity; </tag>
 	    </item>
 
         <item>
             <ruleref uri="#destination"/>
-            <tag> out.destination = rules.destination; </tag>
+            <tag> out.toField = rules.destination; </tag>
         </item>
 
         <item>
             <ruleref uri="#fromCity"/>
             <ruleref uri="#destination"/>
-            <tag> out.fromCity = rules.fromCity; out.destination = rules.destination; </tag>
+            <tag> out.fromField = rules.fromCity; out.toField = rules.destination; </tag>
         </item>
 
         <item>
             <ruleref uri="#fromCity"/>
             <ruleref uri="#destination"/>
             <ruleref uri="#leaveDate"/>
-            <tag> out.fromCity = rules.fromCity; out.destination = rules.destination; out.leaveDate = rules.leaveDate; </tag>
+            <tag> out.fromField = rules.fromCity; out.toField = rules.destination; out.outDate = rules.leaveDate; </tag>
         </item>
 
         <item>
@@ -36,32 +36,39 @@
             <ruleref uri="#destination"/>
             <ruleref uri="#leaveDate"/>
             <ruleref uri="#returnDate"/>
-            <tag> out.fromCity = rules.fromCity; out.toCity = rules.toCity; out.outDate = rules.outDate; out.returnDate = rules.returnDate; </tag>
+            <tag> out.fromField = rules.fromCity; out.toField = rules.destination; out.outDate = rules.leaveDate; out.returnDate = rules.returnDate; </tag>
         </item>
 
         <item>
             <ruleref uri="#fromCity"/>
             <ruleref uri="#destination"/>
             <ruleref uri="#foodMenu"/>
-            <tag> out.fromCity = rules.fromCity; out.toCity = rules.toCity; out.outDate = rules.outDate; out.returnDate = rules.returnDate; </tag>
+            <tag> out.fromField = rules.fromCity; out.toField = rules.destination; out.outDate = rules.leaveDate; out.returnDate = rules.returnDate; </tag>
         </item>
    </one-of>
 </rule> 
 
 <rule id="verby">
-    <one-of>
-        <item>I would like</item>
-        <item>I'd like</item>
-        <item>I want</item>
-    </one-of>
-    <one-of>
-        <item>to book a flight</item>
-        <item>to fly to</item>
-        <item>to travel to</item>
-        <item>to go to</item>
-    </one-of>
+	<one-of>
+		<item>I want</item>
+		<item>I would like</item>
+	</one-of>
+	<one-of>
+		<item>to go</item>
+		<item>to book a ticket</item>
+		<item>to travel</item>
+	</one-of>
 </rule>
 
+<!--
+	<one-of>
+		<item>I want to go</item>
+		<item>I would like to go</item>
+		<item>I want to travel</item>
+		<item>I would like to travel</item>
+	</one-of>
+
+-->
 
 <rule id="fromCity" scope="public">
   <item repeat="0-1">from</item>
@@ -91,6 +98,7 @@
         <item>Friday <tag> out = 'friday'; </tag></item>
         <item>Saturday <tag> out = 'saturday'; </tag></item>
         <item>Sunday <tag> out = 'sunday'; </tag></item>
+        <item>Today <tag> out = 'today'; </tag></item>
     </one-of>
 </rule>
 
@@ -105,6 +113,7 @@
         <item>Friday <tag> out = 'friday'; </tag></item>
         <item>Saturday <tag> out = 'saturday'; </tag></item>
         <item>Sunday <tag> out = 'sunday'; </tag></item>
+        <item>Tomorrow <tag> out = 'tomorrow'; </tag></item>
     </one-of>
 </rule>
 

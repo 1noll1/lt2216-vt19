@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
-      
-  <nomatch>
-    Sorry, I didn't understand.
-    <reprompt/>
-  </nomatch>
-  
-  <noinput>
-    You didn't say anything.
-    <reprompt/>
-  </noinput>
+
+    <nomatch>
+      Sorry, I didn't understand. 
+    </nomatch>
+    <noinput>
+      I couldn't hear you say anything.
+    </noinput>
+
+  <!-- State machine -->
 
   <form id="welcome">
     <block>
       <prompt>
-        <break time="2000" />
+        <break time="1000" />
         Okay! Let's book your flight.
       </prompt>
       <goto next="#askFrom" />
@@ -23,21 +22,29 @@
   </form>
 
   <form id="askFrom">
-    <initial name="booking"> <!-- I'm not sure about this element, it says in the documentation that it's for form-wide information-->
-      <grammar src="grammars/grammar4.xml"/>
-      <prompt> 
-        Please describe your trip.
-      </prompt>
-    </initial>
-      <nomatch>
-      I didn't understand. Please describe where you want to go from, where you want to go and when.
-    </nomatch>
-    <noinput>
-      I couldn't hear you say anything.
-    </noinput>
+    <grammar src="grammars/grammar4.grxml"/>
+      <initial name="booking"> <!-- I'm not sure about this element, it says in the documentation that it's for form-wide information -->
+        <prompt> 
+          Please describe your trip.
+        </prompt>
+        <nomatch count="1">
+          Sorry, I didn't understand. 
+        </nomatch>
+        <nomatch count="2">
+          Sorry, I didn't understand. Let's take it step by step.
+          <assign name="booking" expr="true"/>
+        </nomatch>
+        <noinput count="1">
+          Please describe the from, where, and when of your trip.
+        </noinput>
+        <noinput count="2">
+          I didn't hear you say anything. Let me ask you about your trip.
+          <assign name="booking" expr="true"/>
+        </noinput>
+      </initial>
 
     <field name="fromField">
-      <grammar src="grammars/grammar4.xml#fromCity"/>
+      <grammar src="grammars/grammar4.grxml#fromCity"/>
       <prompt timeout="12s">
         What city are you leaving from?
       </prompt>
@@ -50,48 +57,67 @@
     </noinput>
 
     <field name="toField">
-      <grammar src="grammars/grammar4.xml#destination"/>
+      <grammar src="grammars/grammar4.grxml#destination"/>
       <prompt>
         Where are you going?
       </prompt>
     </field>
 
-    <filled>
-      <if cond="fromCity$.interpretation.fromCity == destination$.interpretation.destination"> 
-        <prompt>
-          Your destination must be different from the city of departure. Please name a city that is not <value expr="fromCity$.interpretation.fromCity" />.
-          <break time="500" />
-        </prompt>
-        <goto next="#askFrom" />
-      </if>      
-    </filled>
-
     <field name="outDate">
-      <grammar src="grammars/grammar4.xml#leaveDate"/>
+      <grammar src="grammars/grammar4.grxml#leaveDate"/>
       <prompt>On what weekday would you like to leave?</prompt>
     </field>
+    <nomatch>
+      Please name the weekday on which you would like to travel.
+    </nomatch>
+    <noinput>
+      Please state your date of departure.
+    </noinput>
 
     <field name="returnDate">
-      <grammar src="grammars/grammar4.xml#returnDate"/>
+      <grammar src="grammars/grammar4.grxml#returnDate"/>
       <prompt>On what weekday would you like to return?</prompt>
     </field>
+    <nomatch>
+      Please name the weekday on which you would like to return.
+    </nomatch>
+    <noinput>
+      Please state your return date.
+    </noinput>
 
     <field name="foodMenu">
-      <grammar src="grammars/grammar4.xml#foodMenu"/>
+      <grammar src="grammars/grammar4.grxml#foodMenu"/>
       <prompt bargein="false">
         <break time="2000" />
-        We serve a variety of hot meals on board. What would you like to eat?
+        Today's menu is smoked salmon or pasta pesto. Which one would you like to eat?
       </prompt>
     </field>
+    <nomatch>
+      I didn't understand. Would you like salmon or pasta?
+    </nomatch>
+    <noinput>
+      I couldn't hear you. Would you like salmon or pasta?
+    </noinput>
 
     <filled>
+      <if cond="fromField == toField">
+        <prompt>
+          Your destination must be different from the city of departure.
+          Please name a city that is not <value expr="toField" />.
+        </prompt>
+        <assign name="toField" expr="false" />
+        <goto nextitem="toField"/>
+      <else />
       <prompt bargein="false">
         <break time="2000" />
-        So you want to go from <value expr="fromCity"/>
-        to <value expr="destination"/>
-        on <value expr="weekday"/>.
-        <goto next="#grounding"/>
+        So you want to go from <value expr="fromField"/>
+        to <value expr="toField"/>
+        on <value expr="outDate"/>,
+	returning on <value expr="returnDate"/>
+        and eat <value expr="foodMenu"/>.
       </prompt>
+      </if>
+      <goto next="#grounding"/>
     </filled>
 
   </form>
@@ -107,7 +133,7 @@
         <goto next="#confirmation" />
       <else />
         <prompt>Sorry about that, let me ask you again.</prompt>
-        <goto next="#booking" />
+        <goto next="#askFrom" />
       </if>
     </filled>
   </form>
@@ -119,4 +145,34 @@
       </prompt>
     </block>
   </form>
+
+  <!-- Go back -->
+
+    <form id="askGoback">
+      <field name="goBack" type="boolean">
+        <prompt timeout="3000">
+          Do you want to return to the main menu?
+        </prompt>
+        <nomatch>
+          Please answer yes or no.
+        <reprompt/>
+        </nomatch>
+        <noinput>
+          I couldn't hear you.
+          <reprompt/>
+        </noinput>
+      </field>
+      <filled>
+        <if cond="goBack">
+          <prompt><break time="1000"/>
+            Okay.
+          </prompt>
+          <goto next="menu.xml" />
+        <else />
+          <prompt>Okay. Thank you for calling!</prompt>
+          <exit/>
+        </if>
+      </filled>
+    </form>
+
 </vxml>
