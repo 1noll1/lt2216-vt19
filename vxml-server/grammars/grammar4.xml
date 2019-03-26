@@ -100,6 +100,7 @@
         <item>Friday <tag> out = 'friday'; </tag></item>
         <item>Saturday <tag> out = 'saturday'; </tag></item>
         <item>Sunday <tag> out = 'sunday'; </tag></item>
+        <item>Today <tag> out = 'today'; </tag></item>
     </one-of>
 </rule>
 
@@ -111,6 +112,7 @@
         <item>pasta <tag> out = 'pasta'; </tag></item>
         <item>nothing <tag> out = 'nothing'; </tag></item>
         <item>not hungry <tag> out = 'nothing'; </tag></item>
+        <item>Tomorrow <tag> out = 'tomorrow'; </tag></item>
     </one-of>
 </rule>
 

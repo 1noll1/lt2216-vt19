@@ -1,0 +1,11 @@
+- Added option to start over at any time. I originally thought I needed to define my own script, which turned out not to be the case.
+
+- Added "today" and tomorrow" as options to the grammar rules
+
+- Added "step by step" option in case the application doesn't catch what the speaker is saying.
+
+- Changed "You didn't say anything" to "I couldn't hear you say anything", since this includes cases where the application simply can't "hear" that the user is speaking.
+
+- Same as for lab 1; "what date" is changed to "what date", as this reflect what the user can actually respond.
+
+- I threw in some politeness. No one likes a rude robot.
