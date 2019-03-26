@@ -9,7 +9,7 @@
       I couldn't hear you say anything.
     </noinput>
 
-<!-- Return to main -->
+<!-- Return to main, see form below -->
 
  <link next="#startOver">
    <grammar mode="voice"
