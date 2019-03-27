@@ -25,7 +25,7 @@
   }
 
   function firstLetter(city) {
-    return (city[city.length 0]);
+    return (city.charAt(0));
 
   Array.prototype.randomElement = function () {
     return this[Math.floor(Math.random() * this.length)]

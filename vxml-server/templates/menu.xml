@@ -2,12 +2,6 @@
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
       xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
 
-<link next="welcomeMenu">
-    <grammar>
-        <![CDATA[(start over)]]>
-    </grammar>
-</link>
-
 <menu id="welcomeMenu">
     <prompt bargein="false">
     Welcome to the flight booking service! Say "start over" at anytime to return to this menu. What would you like to do?
