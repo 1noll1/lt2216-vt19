@@ -10,4 +10,19 @@
 </block>
 </form>
 
+<form id="startOver">
+    <field name="yn" type="boolean">
+    <prompt>
+	Are you sure you want to return to the main menu?
+    </prompt>
+    </field>
+    <filled>
+	<if cond="yn">
+            <goto next="menu" />
+        <else />
+            <goto next="#askFrom" />
+        </if>
+    </filled>
+</form>
+
 </vxml>
