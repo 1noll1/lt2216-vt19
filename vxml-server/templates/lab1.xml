@@ -31,7 +31,6 @@
 
   <form id="askFrom">
     <field name="fromField">
-      <prompt timeout="15s">
       <prompt timeout="12s">
         What city are you leaving from?
       </prompt>
@@ -185,7 +184,7 @@
 
 <!-- Start over -->
 
-  <link next="lab1_menu">
+  <link next="lab1_menu" />
       <grammar mode="voice" version="1.0" xml:lang="en-US" root="init">
           <rule id="init" scope="public">
               <item>start over</item>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<vxml version="2.0">
+
+  <nomatch>
+    Sorry, I didn't understand that.
+    <reprompt/>
+  </nomatch>
+
+  <noinput>
+    Helloooo?
+    <reprompt/>
+  </noinput>
+
+  <form id="greeting">
+     <block>
+         Welcome home.
+         <goto next="#home"/>
+     </block>
+  </form>
+
+  <form id="home">
+    <field name="promptUser">
+        <prompt count="1">What would you like to do?</prompt>
+	<prompt count="2">I'm listening.</prompt>
+        <grammar src="grammars/grammar2.xml"/>
+    </field>
+    <filled>
+        <if cond="promptUser$.confidence &gt; 0.5">
+            <prompt> Okay. Will do!</prompt>
+            <exit/>
+        <elseif cond="promptUser$.confidence &gt; 0.3"/>
+            <prompt> Did you ask me to <value expr="promptUser$.interpretation.action"/> the <value expr="promptUser$.interpretation.object"/>?</prompt>
+	    <goto next="#grounding"/>
+        <else/>
+            <prompt bargein="false">Sorry, I didn't get that.</prompt>
+            <reprompt/>
+        </if>
+    </filled>
+    </form>
+
+    <form id="grounding">
+        <field name="check" type="boolean">
+        </field>
+    <filled>
+        <if cond="check">
+	      <prompt> Alright! Will do. </prompt>
+              <exit/>
+        <else/>
+            <prompt>
+                Sorry about that.
+            </prompt>
+            <goto next="#home"/>
+        </if>
+    </filled>
+    </form>
+</vxml>

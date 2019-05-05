@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" tag-format="semantics/1.0" root="currentCity">
+
+<rule id="currentCity">
+  <one-of>
+    <item>Andorra la Vella<tag> out = 'andorra la vella'; </tag></item>
+    <item>Amsterdam<tag> out = 'amsterdam'; </tag></item>
+    <item>Berlin<tag> out = 'berlin'; </tag></item>
+    <item>Belgrade<tag> out = 'belgrade'; </tag></item>
+    <item>Athens<tag> out = 'athens'; </tag></item>
+    <item>Bratislava<tag> out = 'bratislava'; </tag></item>
+    <item>Ankara<tag> out = 'ankara'; </tag></item>
+    <item>Bern<tag> out = 'bern'; </tag></item>
+    <item>Bucharest<tag> out = 'bucharest'; </tag></item>
+    <item>Copenhagen<tag> out = 'copenhagen'; </tag></item>
+    <item>Brussels<tag> out = 'brussels'; </tag></item>
+    <item>Dublin<tag> out = 'dublin'; </tag></item>
+    <item>Douglas<tag> out = 'douglas'; </tag></item>
+    <item>Gibraltar<tag> out = 'gibraltar'; </tag></item>
+    <item>Helsinki<tag> out = 'helsinki'; </tag></item>
+    <item>Kiev<tag> out = 'kiev'; </tag></item>
+    <item>Lisbon<tag> out = 'lisbon'; </tag></item>
+    <item>London<tag> out = 'london'; </tag></item>
+    <item>Ljubljana<tag> out = 'ljubljana'; </tag></item>
+    <item>Luxembourg<tag> out = 'luxembourg'; </tag></item>
+    <item>Madrid<tag> out = 'madrid'; </tag></item>
+    <item>Minsk<tag> out = 'minsk'; </tag></item>
+    <item>Monaco<tag> out = 'monaco'; </tag></item>
+    <item>Moscow<tag> out = 'moscow'; </tag></item>
+    <item>Nicosia<tag> out = 'nicosia'; </tag></item>
+    <item>Oslo<tag> out = 'oslo'; </tag></item>
+    <item>Paris<tag> out = 'paris'; </tag></item>
+    <item>Podgorica<tag> out = 'podgorica'; </tag></item>
+    <item>Prague<tag> out = 'prague'; </tag></item>
+    <item>Pristina<tag> out = 'pristina'; </tag></item>
+    <item>Riga<tag> out = 'riga'; </tag></item>
+    <item>Rome<tag> out = 'rome'; </tag></item>
+    <item>Reykjavik<tag> out = 'reykjavik'; </tag></item>
+    <item>Sarajevo<tag> out = 'sarajevo'; </tag></item>
+    <item>Stockholm<tag> out = 'stockholm'; </tag></item>
+    <item>Skopje<tag> out = 'skopje'; </tag></item>
+    <item>Saint Helier<tag> out = 'saint helier'; </tag></item>
+    <item>St. Peter Port<tag> out = 'st peter port'; </tag></item>
+    <item>Sofia<tag> out = 'sofia'; </tag></item>
+    <item>Tallinn<tag> out = 'tallinn'; </tag></item>
+    <item>Tirana<tag> out = 'tirana'; </tag></item>
+    <item>Tórshavn<tag> out = 'torshavn'; </tag></item>
+    <item>City of San Marino <tag> out = 'san marino'; </tag> </item>
+    <item>Valletta<tag> out = 'valletta'; </tag></item>
+    <item>Vatican City<tag> out = 'vatican city'; </tag></item>
+    <item>Vienna<tag> out = 'vienna'; </tag></item>
+    <item>Vilnius<tag> out = 'vilnius'; </tag></item>
+    <item>Vaduz<tag> out = 'vaduz'; </tag></item>
+    <item>Warsaw<tag> out = 'warzaw'; </tag></item>
+    <item>Zagreb<tag> out = 'zagreb'; </tag></item>
+    </one-of>
+  </rule>
+
+</grammar>

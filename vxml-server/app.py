@@ -56,6 +56,13 @@ def delays():
     response.headers["Content-Type"] = "application/xml"
     return response
 
+@app.route('/testing')
+def testing():
+    vxml = render_template('testing.xml')
+    response = make_response(vxml)
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
 @app.route('/goback')
 def goback():
     vxml = render_template('goback.xml')
