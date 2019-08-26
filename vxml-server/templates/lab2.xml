@@ -2,75 +2,55 @@
 <vxml version="2.0">
 
   <nomatch>
-    I didn't understand.
+    Sorry, I didn't understand that.
+    <reprompt/>
   </nomatch>
 
   <noinput>
-    You didn't say anything.
+    Helloooo?
+    <reprompt/>
   </noinput>
 
-  <form id="test">
-    <field name="foo">
-      <prompt>Say something!</prompt>
-      <grammar src="grammars/lab2.xml"/>
-    </field>
-    <filled>
-	<prompt>
-  		You said: <value expr="foo$.utterance" />,
-  		with the interpretation <value expr="foo$.interpretation" />
-  		and with a confidence of <value expr="foo$.confidence" />.
-	</prompt>
-	<goto next="#home"/>
-    </filled>
+  <form id="greeting">
+     <block>
+         Welcome home.
+         <goto next="#home"/>
+     </block>
   </form>
 
   <form id="home">
     <field name="promptUser">
-        <grammar src="grammars/grammar2.xml#root"/>
-        <prompt>Welcome home. What would you like to do?</prompt>
+        <prompt count="1">What would you like to do?</prompt>
+	<prompt count="2">I'm listening.</prompt>
+        <grammar src="grammars/grammar2.xml"/>
     </field>
-
     <filled>
-	<prompt>
-  		You said: <value expr="promptUser$.utterance" />
-	</prompt>
-
         <if cond="promptUser$.confidence &gt; 0.5">
-            <prompt> Okay. <value expr="promptUser$.interpretation.action"/>
-            the
-            <value expr="promptUser$.interpretation.object"/>.</prompt>
+            <prompt> Okay. Will do!</prompt>
+            <exit/>
         <elseif cond="promptUser$.confidence &gt; 0.3"/>
-	    <goto next="#grounding" />
+            <prompt> Did you ask me to <value expr="promptUser$.interpretation.action"/> the <value expr="promptUser$.interpretation.object"/>?</prompt>
+	    <goto next="#grounding"/>
         <else/>
-             <prompt>Sorry, I didn't quite catch that. Could you say that again?</prompt>
-             <goto next="#home" />
+            <prompt bargein="false">Sorry, I didn't get that.</prompt>
+            <reprompt/>
         </if>
     </filled>
     </form>
 
     <form id="grounding">
-        <field name="check">
-           <prompt> Did you ask me to <value expr="promptUser$.interpretation.action"/>
-            the
-       	    <value expr="promptUser$.interpretation.object"/>?</prompt>
+        <field name="check" type="boolean">
         </field>
-    </form>
     <filled>
         <if cond="check">
-            <goto next="#confirm"/>
+	      <prompt> Alright! Will do. </prompt>
+              <exit/>
         <else/>
             <prompt>
-                Sorry, could you tell me what to do again?
+                Sorry about that.
             </prompt>
             <goto next="#home"/>
         </if>
     </filled>
-
-    <form id="confirm">
-	<prompt>
-	   Alright. <value expr="promptUser$.interpretation.action"/>ing
-            the
-            <value expr="promptUser$.interpretation.object"/>
-       </prompt>
     </form>
 </vxml>

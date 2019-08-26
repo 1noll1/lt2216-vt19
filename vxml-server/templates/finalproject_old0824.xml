@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
+      xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+
+<script>
+  <![CDATA[
+  var universe = ['Vienna', 'Stockholm', 'London', 'Madrid', 'Amsterdam', 'Nicosia'];
+  var used = [];
+  var currentCity;
+  var prevCity;
+
+  function beginsWith(city) {
+  return city.startsWith(lastLetter)
+  }
+
+  function lastLetter(city) {
+      return (city[city.length -1]);
+  }
+
+  function firstLetter(city) {
+      return (city.charAt(0).toLowerCase());
+  }
+
+  function notUsed(universe, currentCity) {
+      for (var i = 0; i < universe.length; i++) {
+      if (universe[i] == currentCity) {
+      universe.splice(i, 1);
+          return true;
+      }
+      }
+      return false;
+  }
+
+  function getNextCity(universe, letter) {
+      for (var i = 0; i < universe.length; i++) {
+      if (universe[i].toLowerCase().startsWith(letter)) {
+          return universe[i];    
+      }
+      }
+      return false;
+  }
+
+  Array.prototype.randomElement = function () {
+  return this[Math.floor(Math.random() * this.length)]
+  }
+  ]]>
+</script>
+
+<nomatch>
+  Sorry, what was that?
+</nomatch>
+<noinput>
+  I'm waiting.
+</noinput>
+
+<!-- State machine -->
+
+<form id="intro">
+  <field name="rules" type="boolean">
+    <prompt>
+      Let's play a game!
+      I'll name a capital city in Europe, and you give me the name of another European capital
+      that begins with the last letter of the previous one and so on. Get it?
+    </prompt>
+  </field>
+
+  <filled>
+      <if cond="rules">
+        <prompt>
+          Perfect! Let's play.
+        </prompt>
+        <assign name="prevCity" expr="universe.randomElement()" />
+        <goto next="#begin" />
+      <else />
+        <goto nextitem="example" />
+      </if>
+	  </filled>
+
+  <field name="example" type="boolean">
+    <prompt bargein="false">
+      I say "Stockholm", which ends in an "M". Then you say "Minsk". Then I name a city
+      that begins with the letter "K". Are you with me?
+    </prompt>
+  </field>
+  
+  <filled> 
+    <if cond="example">
+      <prompt>
+        Great!
+      </prompt>
+      <assign name="prevCity" expr="universe.randomElement()" />
+      <goto next="#begin" />
+    <else />
+      <reprompt />
+    </if>
+  </filled>
+
+</form>
+
+<form id="begin">
+  <grammar src="grammars/finalproject_grammar.xml" />
+  <field name="currentCity">
+    <prompt count="1">
+      I say <value expr="prevCity"/>. Your turn.
+    </prompt>
+    <prompt count="2">
+      <value expr="prevCity"/>
+    </prompt>
+  </field>
+
+
+<!--  <nomatch> -->
+<!--      I didn't understand what you said. -->
+<!--      <reprompt/> -->
+<!--  </nomatch> -->
+<!--  <noinput> -->
+<!--      Are you there? -->
+<!--      <reprompt/> -->
+<!--  </noinput> -->
+
+
+<!-- User input = currentCity -->
+  <filled>
+<prompt>
+	You said <value expr="currentCity" />
+</prompt>
+<!--
+    <if cond="lastLetter == firstLetter">
+-->
+    <if cond="lastLetter(prevCity) == firstLetter(currentCity)">       
+        <prompt>yes</prompt>
+      <if cond="notUsed(universe, currentCity)">
+        <prompt>hell yeah</prompt>
+       <if cond="getNextCity(universe, lastLetter(currentCity))">
+          <assign name="prevCity" expr="getNextCity(universe, lastLetter(currentCity))" />
+          <assign name="currentCity" expr="false" /> 
+          <goto next="#begin" />
+        <else />
+          <prompt>
+            I can't think of anything... you win!
+            <exit />
+          </prompt>
+		</if>
+      <else />
+        <prompt>
+          We've already named this city.
+        </prompt>
+      </if>
+    <else />
+      <prompt>
+        Hehe, nope. Try again.
+      </prompt>
+      <assign name="currentCity" expr="false" />
+      <goto next="#begin" />
+    </if>
+  </filled>
+</form>
+</vxml>

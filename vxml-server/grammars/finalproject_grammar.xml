@@ -14,6 +14,7 @@
     <item>Bucharest<tag> out = 'bucharest'; </tag></item>
     <item>Copenhagen<tag> out = 'copenhagen'; </tag></item>
     <item>Brussels<tag> out = 'brussels'; </tag></item>
+    <item>Chișinău<tag> out = 'chisinau'; </tag></item>
     <item>Dublin<tag> out = 'dublin'; </tag></item>
     <item>Douglas<tag> out = 'douglas'; </tag></item>
     <item>Gibraltar<tag> out = 'gibraltar'; </tag></item>
@@ -53,7 +54,7 @@
     <item>Vaduz<tag> out = 'vaduz'; </tag></item>
     <item>Warsaw<tag> out = 'warzaw'; </tag></item>
     <item>Zagreb<tag> out = 'zagreb'; </tag></item>
-    </one-of>
-  </rule>
+  </one-of>
+</rule>
 
 </grammar>

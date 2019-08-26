@@ -4,14 +4,11 @@
 
 <script>
   <![CDATA[
-  var universe = ['Vienna', 'Stockholm', 'London', 'Madrid', 'Amsterdam', 'Nicosia'];
+  var universe = ['vatican city', 'andorra la vella', 'ankara', 'chisinau', 'dublin', 'douglas', 'gibraltar', 'helsinki', 'kiev', 'lisbon', 'ljubljana', 'luxembourg', 'monaco', 'moscow', 'oslo', 'podgorica', 'prague', 'pristina', 'riga', 'rome', 'reykjavik', 'sarajevo', 'skopje', 'saint helier', 'saint peter port', 'sofia', 'tallinn', 'tirana', 'torshavn', 'san marino', 'berlin', 'belgrade', 'athens', 'bratislava', 'ankara', 'bern', 'bucharest', 'copenhagen', 'vienna', 'stockholm', 'london', 'madrid', 'amsterdam', 'nicosia', 'valletta', 'vilnius', 'vaduz', 'warsaw', 'zagreb'];
+     
   var used = [];
   var currentCity;
   var prevCity;
-
-  function beginsWith(city) {
-  return city.startsWith(lastLetter)
-  }
 
   function lastLetter(city) {
       return (city[city.length -1]);
@@ -23,31 +20,43 @@
 
   function notUsed(universe, currentCity) {
       for (var i = 0; i < universe.length; i++) {
-      if (universe[i] === currentCity) {
-      universe.splice(i, 1);
+        if (universe[i] == currentCity) {
+          universe.splice(i, 1);
           return true;
-      }
+        }
       }
       return false;
   }
 
   function getNextCity(universe, letter) {
       for (var i = 0; i < universe.length; i++) {
-      if (universe[i].toLowerCase().startsWith(letter)) {
-          return universe[i];    
-      }
+        // if (universe[i].toLowerCase().startsWith(letter)) {
+          if (firstLetter(universe[i]) == letter) {
+          // return universe[i];
+		return true;    
+        }
       }
       return false;
   }
 
+function findNextCity(universe, letter) {
+    for (var i = 0; i < universe.length; i++) {
+	if (firstLetter(universe[i]) == letter) {
+        // return universe[i];
+        	return universe[i];;
+      }
+    }
+}
+
   Array.prototype.randomElement = function () {
-  return this[Math.floor(Math.random() * this.length)]
+    return this[Math.floor(Math.random() * this.length)]
   }
   ]]>
 </script>
 
 <nomatch>
   Sorry, what was that?
+  <reprompt/>
 </nomatch>
 <noinput>
   I'm waiting.
@@ -57,7 +66,7 @@
 
 <form id="intro">
   <field name="rules" type="boolean">
-    <prompt>
+    <prompt bargein="false">
       Let's play a game!
       I'll name a capital city in Europe, and you give me the name of another European capital
       that begins with the last letter of the previous one and so on. Get it?
@@ -77,7 +86,7 @@
 	  </filled>
 
   <field name="example" type="boolean">
-    <prompt bargein="false">
+    <prompt bargein="true">
       I say "Stockholm", which ends in an "M". Then you say "Minsk". Then I name a city
       that begins with the letter "K". Are you with me?
     </prompt>
@@ -98,54 +107,52 @@
 </form>
 
 <form id="begin">
-  <grammar src="grammars/finalproject_grammar.xml" />
   <field name="currentCity">
-    <prompt>
+  <grammar src="grammars/finalproject_grammar.xml" />
+    <prompt timeout="10s">
       I say <value expr="prevCity"/>. Your turn.
     </prompt>
-  </field>
 
-  <nomatch>
-      I didn't understand what you said.
-      <reprompt/>
-  </nomatch>
-  <noinput>
-      Are you there?
-      <reprompt/>
-  </noinput>
+    <noinput>
+	<prompt>Can't think of anything? Haha, I win!</prompt>
+	<exit />
+    </noinput>
 
 <!-- User input = currentCity -->
+  </field>
+
   <filled>
-<prompt>
-	You said <value expr="currentCity" />
-</prompt>
-<!--
-    <if cond="lastLetter == firstLetter">
--->
-    <if cond="lastLetter(prevCity) == firstLetter(currentCity).toLowerCase()">
-      <if cond="notUsed(universe, currentCity)">
-       <if cond="getNextCity(universe, lastLetter(currentCity))">
-          <assign name="prevCity" expr="getNextCity(universe, lastLetter(currentCity))" />
-          <assign name="currentCity" expr="false" /> 
-          <goto next="#begin" />
-        <else />
-          <prompt>
-            I can't think of anything... you win!
-            <exit />
-          </prompt>
+    <prompt>You said <value expr="currentCity"/></prompt>
+<!-- if the last letter of the previous city matches the first letter of current city -->
+    <if cond="lastLetter(prevCity) == firstLetter(currentCity)">
+        <!-- <prompt>The letters match, good job!</prompt> -->
+		<if cond="notUsed(universe, currentCity)">
+			<!-- <prompt>we haven't used this city yet!</prompt> -->
+                <else />
+                        <!-- <prompt>We have used this city already sucker</prompt> -->
 		</if>
-      <else />
-        <prompt>
-          We've already named this city.
-        </prompt>
-      </if>
+			<if cond="getNextCity(universe, lastLetter(currentCity))">
+				<!-- <prompt>I'm thinking about a new city</prompt> -->
+				<break size="medium" />
+				<assign name="prevCity" expr="findNextCity(universe, lastLetter(currentCity))" />
+                		<assign name="currentCity" expr="false" />
+				<break size="medium" />
+				<goto next="#begin" />
+			<else />
+				<prompt>I can't think of a new city. You win!</prompt>
+				<exit />
+			</if>
     <else />
-      <prompt>
-        Hehe, nope. Try again.
-      </prompt>
-      <assign name="currentCity" expr="false" />
-      <goto next="#begin" />
+        <prompt>They don't match!</prompt>
+	<goto next="#begin"/>
+        <exit />
     </if>
   </filled>
+</form>
+
+<form id="test">
+  <field name="testing">
+    <prompt>Hi i'm warrick</prompt>
+  </field>
 </form>
 </vxml>
